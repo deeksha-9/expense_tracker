@@ -7,6 +7,13 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import pandas as pd
+import os.path
+from os import path
+from datetime import date
+import matplotlib.pyplot as plt
+
+
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -51,11 +58,16 @@ class Ui_Form(object):
 "color: white;\n"
 "}\n"
 "")
+        
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("C:/Users/Deeksha Priya/Desktop/Expense_tracker/Resource/unnamed.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        Form.setWindowIcon(icon)
+        
         self.label = QtWidgets.QLabel(Form)
         self.label.setGeometry(QtCore.QRect(0, 0, 911, 821))
         self.label.setStyleSheet("")
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("Resource/bg3.jpg"))
+        self.label.setPixmap(QtGui.QPixmap("C:/Users/Deeksha Priya/Desktop/Expense_tracker/Resource/bg3.jpg"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.tabWidget = QtWidgets.QTabWidget(Form)
@@ -121,7 +133,7 @@ class Ui_Form(object):
         self.label_2 = QtWidgets.QLabel(self.tab)
         self.label_2.setGeometry(QtCore.QRect(-10, 0, 911, 811))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("Resource/bg3.jpg"))
+        self.label_2.setPixmap(QtGui.QPixmap("C:/Users/Deeksha Priya/Desktop/Expense_tracker/Resource/bg3.jpg"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.label_6 = QtWidgets.QLabel(self.tab)
@@ -133,6 +145,17 @@ class Ui_Form(object):
         self.comboBox = QtWidgets.QComboBox(self.tab)
         self.comboBox.setGeometry(QtCore.QRect(390, 90, 201, 31))
         self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+          
         self.lineEdit = QtWidgets.QLineEdit(self.tab)
         self.lineEdit.setGeometry(QtCore.QRect(390, 170, 201, 31))
         self.lineEdit.setObjectName("lineEdit")
@@ -169,7 +192,7 @@ class Ui_Form(object):
         self.label_3.setGeometry(QtCore.QRect(-10, -10, 921, 791))
         self.label_3.setStyleSheet("")
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("Resource/bg3.jpg"))
+        self.label_3.setPixmap(QtGui.QPixmap("C:/Users/Deeksha Priya/Desktop/Expense_tracker/Resource/bg3.jpg"))
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
         self.label_9 = QtWidgets.QLabel(self.tab_2)
@@ -236,7 +259,7 @@ class Ui_Form(object):
 "}")
         self.label_13.setObjectName("label_13")
         self.label_14 = QtWidgets.QLabel(self.tab_2)
-        self.label_14.setGeometry(QtCore.QRect(480, 140, 151, 31))
+        self.label_14.setGeometry(QtCore.QRect(480, 140, 181, 31))
         self.label_14.setObjectName("label_14")
         self.label_15 = QtWidgets.QLabel(self.tab_2)
         self.label_15.setGeometry(QtCore.QRect(480, 190, 161, 31))
@@ -245,10 +268,10 @@ class Ui_Form(object):
         self.label_16.setGeometry(QtCore.QRect(490, 240, 131, 31))
         self.label_16.setObjectName("label_16")
         self.label_17 = QtWidgets.QLabel(self.tab_2)
-        self.label_17.setGeometry(QtCore.QRect(100, 290, 131, 21))
+        self.label_17.setGeometry(QtCore.QRect(100, 280, 141, 21))
         self.label_17.setObjectName("label_17")
         self.label_18 = QtWidgets.QLabel(self.tab_2)
-        self.label_18.setGeometry(QtCore.QRect(490, 290, 121, 16))
+        self.label_18.setGeometry(QtCore.QRect(490, 280, 141, 31))
         self.label_18.setObjectName("label_18")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.tab_2)
         self.lineEdit_2.setGeometry(QtCore.QRect(260, 140, 113, 22))
@@ -342,7 +365,7 @@ class Ui_Form(object):
 "\n"
 "")
         self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("Resource/bg3.jpg"))
+        self.label_4.setPixmap(QtGui.QPixmap("C:/Users/Deeksha Priya/Desktop/Expense_tracker/Resource/bg3.jpg"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
         self.label_19 = QtWidgets.QLabel(self.tab_3)
@@ -364,6 +387,20 @@ class Ui_Form(object):
         self.comboBox_2 = QtWidgets.QComboBox(self.tab_3)
         self.comboBox_2.setGeometry(QtCore.QRect(300, 110, 191, 31))
         self.comboBox_2.setObjectName("comboBox_2")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+
+        
         self.pushButton_9 = QtWidgets.QPushButton(self.tab_3)
         self.pushButton_9.setGeometry(QtCore.QRect(310, 250, 141, 28))
         self.pushButton_9.setObjectName("pushButton_9")
@@ -373,10 +410,25 @@ class Ui_Form(object):
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+        self.pushButton.clicked.connect(self.enter_record)
+        self.pushButton_3.clicked.connect(self.view)
+
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "Expense Tracker"))
         self.label_6.setText(_translate("Form", "Select Category"))
+        self.comboBox.setItemText(0, _translate("Form", "Food"))
+        self.comboBox.setItemText(1, _translate("Form", "Clothing"))
+        self.comboBox.setItemText(2, _translate("Form", "Footwears"))
+        self.comboBox.setItemText(3, _translate("Form", "Personal"))
+        self.comboBox.setItemText(4, _translate("Form", "Travel"))
+        self.comboBox.setItemText(5, _translate("Form", "Stationary"))
+        self.comboBox.setItemText(6, _translate("Form", "Rations"))
+        self.comboBox.setItemText(7, _translate("Form", "Gifts"))
+        self.comboBox.setItemText(8, _translate("Form", "Party"))
+        self.comboBox.setItemText(9, _translate("Form", "EMI"))
+        
         self.label_7.setText(_translate("Form", "Enter Amount"))
         self.pushButton.setText(_translate("Form", "Add Record"))
         self.label_8.setText(_translate("Form", "TextLabel"))
@@ -405,8 +457,50 @@ class Ui_Form(object):
         self.label_20.setText(_translate("Form", "Wants to receive Notification?"))
         self.checkBox.setText(_translate("Form", "Notification"))
         self.label_5.setText(_translate("Form", "Enter month"))
+        self.comboBox_2.setItemText(0, _translate("Form", "January"))
+        self.comboBox_2.setItemText(1, _translate("Form", "Febuary"))
+        self.comboBox_2.setItemText(2, _translate("Form", "March"))
+        self.comboBox_2.setItemText(3, _translate("Form", "April"))
+        self.comboBox_2.setItemText(4, _translate("Form", "May"))
+        self.comboBox_2.setItemText(5, _translate("Form", "June"))
+        self.comboBox_2.setItemText(6, _translate("Form", "July"))
+        self.comboBox_2.setItemText(7, _translate("Form", "August"))
+        self.comboBox_2.setItemText(8, _translate("Form", "September"))
+        self.comboBox_2.setItemText(9, _translate("Form", "October"))
+        self.comboBox_2.setItemText(10, _translate("Form", "November"))
+        self.comboBox_2.setItemText(11, _translate("Form", "December"))
         self.pushButton_9.setText(_translate("Form", "Add budget"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Form", "Setting"))
+
+    def enter_record(self,Form):
+        date_df = str(date.today())
+        amount_df = int(self.lineEdit.text())
+        category_df = self.comboBox.currentText()
+        month_df = []
+        year_df = []
+       # print(date_df,amount_df,category_df,month_df,year_df)
+       # data=[date_df,amount_df,category_df,month_df,year_df]
+        data = {"Date":date_df,"Amount":amount_df,"Category":category_df,"Month" :month_df,"Category":year_df}
+        df=pd.DataFrame(data)
+        df['Month'] = df['Date'].dt.month
+        df['Year'] = df['Date'].dt.year
+        if path.exists('C:/Users/Deeksha Priya/Desktop/Expense_tracker/expense.csv'):
+            df.to_csv('expense.csv',mode='a',header=False,index=False)
+        else:
+            df.to_csv('expense.csv',mode='a',header=['Date','Amount','Category','Month','Year'],index=False)
+
+    def view(self,Form):
+        df = pd.read_csv('expense.csv')
+        self.tableWidget.setColumnCount(len(df.columns))
+        self.tableWidget.setRowCount(len(df.index))
+        self.tableWidget.setHorizontalHeaderItem(0,QtWidgets.QTableWidgetItem("Date"))
+        self.tableWidget.setHorizontalHeaderItem(1,QtWidgets.QTableWidgetItem("Amount"))
+        self.tableWidget.setHorizontalHeaderItem(2,QtWidgets.QTableWidgetItem("Category"))
+        self.tableWidget.setHorizontalHeaderItem(3,QtWidgets.QTableWidgetItem("Month"))
+        self.tableWidget.setHorizontalHeaderItem(4,QtWidgets.QTableWidgetItem("Year"))
+        for i in range(len(df.index)):
+            for j in range(len(df.columns)):
+                self.tableWidget.setItem(i,j,QtWidgets.QTableWidgetItem(str(df.iloc[i, j])))
 
 
 if __name__ == "__main__":
